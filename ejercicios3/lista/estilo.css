@@ -1,0 +1,80 @@
+h1{
+    font-family: sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color:#a0d3e8;
+    font-size:3em;
+}
+
+input{
+    width:80%;
+    height:56px;
+    font-size:1.8em;
+    padding-left:.5em;
+    font-family: sans-serif;
+    border-radius:10px 0 0 10px;
+    border:1px solid darkred;
+    outline:none;
+    color:brown;
+    text-align: left;
+    float:left;
+}
+
+button.anadir{
+    width:10%;
+    height:60px;
+    font-size:2em;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 700;
+    background-color: darkred;
+    border-radius: 0 10px 10px 0;
+    border:none;
+    outline:none;
+    margin-left:-1em;
+}
+
+button.anadir:hover{
+    background-color:orangered;
+}
+
+li{
+    font-size:2em;
+    color:teal;
+    font-family:"Montserrat",sans-serif;
+    margin-bottom:.5em;
+}
+
+
+a{
+    border-radius:10px;
+    color:white;
+    background-color:darkred;
+    padding:0 .5em;
+    margin:.1em;
+    font-size:.7em;
+    border:none;
+    outline:none;
+    text-decoration: none;
+}
+
+a.menos{
+    background-color: darkred;
+}
+
+a.subir, a.bajar{
+    background-color: darkgreen;
+}
+a:hover{
+    background-color:red;
+    color:white;
+}
+a.subir:hover, a.bajar:hover{
+    background-color: green;
+}
+
+li a{
+    display:none;
+}
+li:hover a{
+    display:inline-block;
