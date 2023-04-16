@@ -14,15 +14,11 @@
 <main>
     <form action="tarea.php" method="POST">
         <input type="text" id="tarea" name="tarea" placeholder="Nueva tarea">
-        <button id="añadir" class="anadir">+</button>
+        <button id="añadir" class="añadir">+</button>
     </form>
     <section>
         <ul id="lista">
-            <?php
-            $lista="";
-            $lista = file_get_contents('tareas.txt');
-            echo $lista;
-            ?>
+
         </ul>
     </section>
 </main>
