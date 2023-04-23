@@ -84,13 +84,7 @@ a.desmarcar:hover{
 .marcada{
     text-decoration: line-through;
 }
-/* Para hacerlo mÃ¡s chulo
-li a{
-    display:none;
-}
-li:hover a{
-    display:inline-block;
-}*/
+
 
 #errores{
     font-size:1.5em;

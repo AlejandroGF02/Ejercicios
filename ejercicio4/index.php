@@ -1,4 +1,8 @@
+<?php
 
+include_once "conexion.php";
+
+?>
 <!doctype html>
 <html lang="es">
 <head>
