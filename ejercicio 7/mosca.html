@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moscas Flotantes</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<aside>
+    <section id="confFondo">
+        <h2>Fondo</h2>
+        <label for="rojo">Rojo</label>
+        <input type="number" min="100" max="255" id="rojo" value="255">
+        <label for="verde">Verde</label>
+        <input type="number" min="100" max="255" id="verde" value="255">
+        <label for="azul">Azul</label>
+        <input type="number" min="100" max="255" id="azul" value="255">
+    </section>
+    <section id="confMosca">
+        <h2>Mosca</h2>
+        <p style="margin-bottom: .5em">
+            <label for="x">Posición x</label>
+            <input type="number" min="0" id="x" max="9999" value="0">
+            <label for="y">Posición y</label>
+            <input type="number" min="0" id="y" max="9999" value="0">
+        </p>
+        <label for="rotacion">Rotación</label>
+        <input type="number" min="0" max="360" id="rotacion" value="0">
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <button id="anadir">Nueva mosca</button>
+    </section>
+</aside>
+<main>
+    <div class="mosca seleccionada" data-x="0" data-y="0" data-rotacion="0"></div>
+</main>
+
+<script>
+
+    window.addEventListener("DOMContentLoaded",(e)=>{
+        let mosca= document.querySelector(".mosca");
+        let principal=document.querySelector("main");
+        let rojo=255;
+        let verde=255;
+        let azul=255;
+        let ColorRojo=document.getElementById("rojo");
+        let ColorVerde=document.getElementById("verde");
+        let ColorAzul=document.getElementById("azul");
+        let tX=document.getElementById("x");
+        let tY=document.getElementById("y");
+        let tRotacion=document.getElementById("rotacion");
+        let btAnadir=document.getElementById("anadir");
+
+        ColorRojo.addEventListener("change",(e)=>{
+            rojo=ColorRojo.value;
+            if(rojo<100) {
+                rojo=100;
+                ColorRojo.value=100;
+            }
+
+            principal.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+        ColorVerde.addEventListener("change",(e)=>{
+            verde=ColorVerde.value;
+            if(verde<100) {
+                verde=100;
+                ColorVerde.value=100;
+            }
+            principal.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+        ColorAzul.addEventListener("change",(e)=>{
+            azul=ColorAzul.value;
+            if(azul<100) {
+                azul=100;
+                ColorAzul.value=100;
+            }
+            principal.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+
+        mosca.classList.
+
+    });
+
+/*
+    window.addEventListener("DOMContentLoaded",(e)=>{
+        let mosca= document.querySelector(".mosca");
+        let cMain=document.querySelector("main");
+        let rojo=255;
+        let verde=255;
+        let azul=255;
+        let tRojo=document.getElementById("rojo");
+        let tVerde=document.getElementById("verde");
+        let tAzul=document.getElementById("azul");
+        let tX=document.getElementById("x");
+        let tY=document.getElementById("y");
+        let tRotacion=document.getElementById("rotacion");
+        let btAnadir=document.getElementById("anadir");
+
+
+        tRojo.addEventListener("change",(e)=>{
+            rojo=tRojo.value;
+            if(rojo<128) {
+                rojo=128;
+                tRojo.value=128;
+            }
+            cMain.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+        tVerde.addEventListener("change",(e)=>{
+            verde=tVerde.value;
+            if(verde<128) {
+                verde=128;
+                tVerde.value=128;
+            }
+            cMain.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+        tAzul.addEventListener("change",(e)=>{
+            azul=tAzul.value;
+            if(azul<128) {
+                azul=128;
+                tAzul.value=128;
+            }
+            cMain.style.backgroundColor=`rgb(${rojo},${verde},${azul})`;
+        });
+
+        tX.addEventListener("change",(e)=>{
+            mosca.style.left=`${tX.value}px`;
+            mosca.dataset.x=tX.value;
+        });
+        tY.addEventListener("change",(e)=>{
+            mosca.style.top=`${tY.value}px`
+            mosca.dataset.y=tY.value;
+        });
+        tRotacion.addEventListener("change",(e)=>{
+            mosca.style.transform=`rotate(${tRotacion.value}deg)`;
+            mosca.dataset.rotacion=tRotacion.value;
+        });
+
+        btAnadir.addEventListener("click",(e)=>{
+            let nueva=document.createElement("div");
+            nueva.classList.add("mosca");
+            nueva.dataset.x=0;
+            nueva.dataset.y=0;
+            nueva.dataset.rotacion=0;
+            cMain.append(nueva);
+            mosca.classList.remove("seleccionada");
+
+            nueva.classList.add("seleccionada");
+            mosca=nueva;
+            tX.value=0;
+            tY.value=0;
+            tRotacion.value=0;
+        });
+
+        cMain.addEventListener("click",(e)=>{
+            if(e.target.classList.contains("mosca")){
+                mosca.classList.remove("seleccionada");
+                e.target.classList.add("seleccionada");
+                mosca=e.target;
+                tX.value=mosca.dataset.x;
+                tY.value=mosca.dataset.y;
+                tRotacion.value=mosca.dataset.rotacion;
+            }
+        });
+
+        window.addEventListener("keydown",(e)=>{
+            let tecla=e.key;
+            if(tecla=="ArrowUp") {
+                tY.value=parseInt(tY.value)-3;;
+                mosca.style.top = `${tY.value}px`
+                mosca.dataset.y = tY.value;
+            }
+            else if(tecla=="ArrowDown") {
+                tY.value=parseInt(tY.value)+3;
+                mosca.style.top = `${tY.value}px`
+                mosca.dataset.y = tY.value;
+            }
+            else if(tecla=="ArrowLeft") {
+                tX.value=parseInt(tX.value)-3;
+                mosca.style.left = `${tX.value}px`
+                mosca.dataset.x = tX.value;
+            }
+            else if(tecla=="ArrowRight"){
+                tX.value=parseInt(tX.value)+3;
+                mosca.style.left = `${tX.value}px`
+                mosca.dataset.x = tX.value;
+            }
+            else if(tecla=="A" || tecla=="a"){
+                mosca.dataset.rotacion = parseInt(mosca.dataset.rotacion)-3;
+                tRotacion.value=mosca.dataset.rotacion;
+                mosca.style.transform=`rotate(${mosca.dataset.rotacion}deg)`;
+            }
+            else if(tecla=="S" || tecla=="s"){
+                mosca.dataset.rotacion = parseInt(mosca.dataset.rotacion)+3;
+                tRotacion.value=mosca.dataset.rotacion;
+                mosca.style.transform=`rotate(${mosca.dataset.rotacion}deg)`;
+            }
+        });
+    });
+*/
+</script>
+</body>
+</html>

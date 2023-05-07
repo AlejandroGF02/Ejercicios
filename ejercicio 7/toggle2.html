@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+//p[data-primero='true']*20>lorem
+
+<p data-primero="true">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi consectetur debitis
+    ducimus et eveniet explicabo id, laboriosam libero maiores minima mollitia nisi perferendis qui quia quibusdam quos
+    sint velit!</p>
+<p data-primero="true">At commodi consequuntur, debitis distinctio earum est expedita facilis impedit incidunt ipsam
+    itaque iure mollitia nam natus nihil odit omnis optio quaerat quas qui reprehenderit sed tempora temporibus tenetur
+    voluptatem.</p>
+<p data-primero="true">Asperiores commodi, distinctio hic in ipsum iste mollitia necessitatibus optio voluptas? Aliquam
+    animi autem culpa distinctio dolore doloremque dolores exercitationem hic id labore minus neque nisi quasi,
+    recusandae sequi tenetur.</p>
+<p data-primero="true">Esse eveniet harum hic ipsum minus nemo odit provident quidem unde? Beatae cum eius expedita
+    harum incidunt itaque laudantium natus nobis placeat repellat! Eaque est exercitationem explicabo odit quod
+    voluptatum.</p>
+<p data-primero="true">A assumenda dolore doloremque doloribus fuga illo ipsum iste iusto molestias, nam neque officiis
+    placeat porro provident, quibusdam reiciendis sequi suscipit unde vitae voluptas? Asperiores dolore ipsam sequi
+    temporibus voluptate?</p>
+<p data-primero="true">Corporis dolorem eius error eum eveniet excepturi, itaque iure iusto libero nam, numquam
+    perferendis provident quaerat quam quasi, quidem totam veniam. Animi architecto cupiditate dignissimos distinctio
+    fugit possimus, saepe voluptatem!</p>
+<p data-primero="true">Alias blanditiis, deserunt dicta iste molestiae porro voluptatibus. Amet, consectetur deleniti ea
+    impedit laboriosam nisi odio quas quos rerum vero. Autem blanditiis itaque nostrum nulla, officiis provident
+    quibusdam reiciendis velit!</p>
+<p data-primero="true">Asperiores cumque distinctio ipsam iste quos repellat rerum sequi, tempora voluptatum. Alias
+    aliquid commodi deleniti dolorem ea est ipsam, laborum nihil nostrum perferendis provident quaerat qui quisquam
+    tempora tenetur, ut!</p>
+<p data-primero="true">Animi cupiditate dignissimos dolore ex incidunt iusto minima nisi provident quod repellat!
+    Accusantium consectetur maiores praesentium quam ut! Aspernatur error et, ex ipsum libero neque officia quam? A
+    aperiam, tempore.</p>
+<p data-primero="true">Aspernatur, deleniti excepturi in mollitia repellendus sit soluta? Adipisci delectus deleniti
+    eveniet id libero odit quam sit. Accusamus accusantium dolor, dolore dolores ducimus explicabo hic id labore,
+    provident quia quidem.</p>
+<p data-primero="true">Accusamus adipisci cum deleniti earum error, id incidunt laboriosam magnam maiores, minima
+    nostrum nulla perspiciatis provident sunt suscipit! Ducimus enim eum eveniet itaque nostrum optio quae qui, saepe
+    tempore velit.</p>
+<p data-primero="true">Amet doloribus facilis impedit iure labore minima, obcaecati odio praesentium saepe soluta. A
+    accusantium aliquam, cumque dicta esse, exercitationem explicabo facere fugit magnam maiores nam praesentium quaerat
+    quos soluta vitae?</p>
+<p data-primero="true">Beatae cumque ea ex excepturi ipsa maiores, nulla quo rerum totam velit. Adipisci aut autem
+    debitis dignissimos dolores, est inventore iusto minus, nulla odio, officia omnis perferendis rerum totam vero?</p>
+<p data-primero="true">Accusantium culpa distinctio enim est et illo nihil nisi nostrum nulla odio, omnis qui,
+    repellendus repudiandae sit unde voluptas voluptatem. Aperiam dolor dolore harum molestias optio quas ratione,
+    tempora voluptates.</p>
+<p data-primero="true">Accusamus aut dicta facilis illo labore, necessitatibus nobis numquam perspiciatis, sequi vel
+    vitae voluptatum. Adipisci architecto at hic illo impedit ipsa quo! Ad ex nam necessitatibus nisi repellat saepe
+    totam!</p>
+<p data-primero="true">A beatae eos illo ratione tempore veniam. Aliquid consequatur dicta dolore, doloremque eius et
+    facilis, fugiat minima nostrum numquam obcaecati perspiciatis provident quam quod repellendus rerum similique
+    tempora ullam voluptas!</p>
+<p data-primero="true">Accusantium adipisci animi at atque beatae debitis dolore eaque earum eius eligendi error est eum
+    ipsum laborum maiores nemo nulla omnis placeat praesentium quibusdam recusandae, sit temporibus tenetur veniam
+    voluptates.</p>
+<p data-primero="true">A alias assumenda consequuntur ducimus eaque eligendi harum illum ipsam iste, nulla odit officiis
+    quasi reprehenderit sed voluptatem! Ad ducimus eligendi ipsam, nobis obcaecati porro quas quasi quod repellat
+    sapiente?</p>
+<p data-primero="true">Ad at facere minus perspiciatis ratione repudiandae similique tempora voluptatum? A adipisci
+    aliquam consectetur, cumque debitis doloremque fugit itaque molestias placeat possimus tempore unde velit? Culpa
+    dolor dolore earum quae.</p>
+<p data-primero="true">A, at, atque blanditiis commodi, consequatur dignissimos doloribus eius eveniet explicabo facilis
+    fuga inventore ipsam itaque iure laborum libero minus officia optio perferendis quis quisquam recusandae saepe sint
+    tempora voluptas.</p>
+
+
+<script>
+
+    window.addEventListener("DOMContentLoaded", function (e){
+        //codigo a partir de aqui se lanza cuando este cargada
+
+        let parrafos=document.querySelectorAll("p"); //array
+
+       for (let parrafo of parrafos){
+           parrafo.addEventListener("click",function(e){
+               if (parrafo.dataset.primero=="true"){
+                   parrafo.style.backgroundColor="red";
+                   parrafo.dataset.primero ="false";
+               }
+               else {
+                   parrafo.style.backgroundColor="transparent";
+                   parrafo.dataset.primero ="true";
+               }
+
+           });
+       }
+
+    });
+
+</script>
+
+</body>
+</html>
