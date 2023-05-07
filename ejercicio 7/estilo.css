@@ -32,10 +32,10 @@ aside section{
     position:absolute;
     width:80px;
     height:80px;
-    background-image: url(imagenes/mosca.png);
+    background-image: url(mosca.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .mosca.seleccionada{
-    background-image: url(imagenes/mosca.png);
+    background-image: url(mosca.png);
 }
